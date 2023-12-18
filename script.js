@@ -23,9 +23,12 @@ function createGrid() {
 window.addEventListener('load', createGrid);
 
 function setGridSides() {
-  squarePerSide = Number(prompt('Enter square per side'));
-  container.remove();
+  squarePerSide = 0;
+  while (squarePerSide > 100 || squarePerSide < 2) {
+    squarePerSide = Number(prompt('Enter square per side. Min 2, max 100'));
+  }
 
+  container.remove();
   container = document.createElement('div');
   container.setAttribute('id', 'container');
   createGrid();
